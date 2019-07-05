@@ -3,15 +3,20 @@
 :root {
   --font-family: 'Montserrat', sans-serif;
 
-  --body-bg: #333;
-  --text-color: #eee;
+  --body-bg: rgb(27, 27, 27);
+  --text-color: rgb(255, 255, 255);
 
-  --brand-primary: #81a76d;
-  --brand-secondary: #95bf6f;
+  --brand-primary: #4573f1;
+  --brand-secondary: #8eb5f0;
 
-  --component-bg: #555;
-  --component-border-color: #777;
+  --component-bg: rgb(27, 27, 27);
+  --component-border-color: rgb(245, 245, 245);
   --component-box-shadow: 0 1px 3px color(var(--black) a(50%));
 
   --state-danger-color: #f8495f;
+
+  --input-color: var(--text-color);
+  --input-border-color: var(--component-border-color);
+  --input-border-size: 2px;
+  --input-line-height: 2em;
 }
