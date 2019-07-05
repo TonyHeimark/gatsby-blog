@@ -1,9 +1,10 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .root {
   position: relative;
   z-index: 100;
+  background: transparent;
 }
 
 .wrapper {
@@ -20,6 +21,7 @@
 
 .branding {
   font-weight: 600;
+  font-size: 1.2rem;
   flex: 1;
 
   @nest & a {

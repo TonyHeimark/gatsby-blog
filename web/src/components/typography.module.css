@@ -1,11 +1,14 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
-
-
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 /*
  * Statically sized elements
  */
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
 
 .title1 {
   font-size: var(--font-title1-size);
@@ -42,8 +45,6 @@
   line-height: var(--font-micro-line-height);
   text-transform: uppercase;
 }
-
-
 
 /*
  * Responsively sized elements

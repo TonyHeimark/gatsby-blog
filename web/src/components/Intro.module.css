@@ -1,0 +1,22 @@
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
+
+.intro {
+  padding: 250px 0;
+  background: rgb(224, 177, 159);
+  margin-top: -95.19px;
+
+  @media (--media-min-small) {
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding: 1.5em;
+  margin: 0 auto;
+
+  @media (--media-min-small) {
+    padding: 2em;
+  }
+}
