@@ -5,32 +5,74 @@ import { cn } from "../lib/helpers";
 
 import styles from "./header.module.css";
 
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
-  <div className={styles.root}>
-    <div className={styles.wrapper}>
-      <div className={styles.branding}>
-        <Link to="/">Tony Heimark</Link>
-      </div>
+export default class App extends React.Component{
 
-      <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-        <Icon symbol="hamburger" />
-      </button>
+    constructor(props){
+        super(props)
 
-      <nav className={cn(styles.nav, showNav && styles.showNav)}>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/archive/">Blog</Link>
-          </li>
-          <li>
-            <Link to="/about/">About</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-);
+        this.state={
+            navStyle: `${styles.nav} ${styles.navHide}` 
+        }
+    }
 
-export default Header;
+    handleHamburger = () => {
+        if (this.state.navStyle === `${styles.nav} ${styles.navShow}`){
+          setTimeout(() => {
+            this.setState(() => ({
+              navStyle: `${styles.nav} ${styles.navFade}`
+              }))
+          }, 50)
+          setTimeout(() => {
+            this.setState(() => ({
+              navStyle: `${styles.nav} ${styles.navHide}`
+            }))
+          }, 400);
+        } else {
+          this.setState(() => ({
+            navStyle: `${styles.nav} ${styles.navShow}`
+          }))
+        }
+    }
+        
+    render(){ 
+
+        return(
+            <header className={styles.header}>
+                <div className={styles.header__innerBlock}>
+                    <div className={styles.branding}>
+                        <Link to="/">Tony Heimark</Link>
+                    </div>
+                <div  onClick={this.handleHamburger}
+                      className=
+                      {
+                        this.state.navStyle === `${styles.nav} ${styles.navShow}`
+                      ? 
+                      `${styles.change} ${styles.hamburger}`
+                      : 
+                      `${styles.hamburger}`
+                      }>
+                    <div className={styles.bar1}></div>
+                    <div className={styles.bar2}></div>
+                    <div className={styles.bar3}></div>
+                </div>
+                <nav className={this.state.navStyle} onClick={window.innerWidth < 768 ? this.handleHamburger : undefined}>
+                    <ul>
+                        <li>
+                            <Link className={styles.nav_link} activeClassName={styles.navItemActive} to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link className={styles.nav_link} activeClassName={styles.navItemActive} to="/archive/">Blog</Link>
+                        </li>
+                        <li>
+                            <Link className={styles.nav_link} activeClassName={styles.navItemActive} to="/about/">About</Link>
+                        </li>
+                        <li>
+                            <Link className={styles.nav_link} activeClassName={styles.navItemActive} to="/contact/">Contact</Link>
+                        </li>
+                    </ul>
+                </nav>
+                </div>
+            </header>
+        );
+    }
+}

@@ -6,9 +6,6 @@
  * Statically sized elements
  */
 
-html {
-  font-family: "Montserrat", sans-serif;
-}
 
 .title1 {
   font-size: var(--font-title1-size);
@@ -136,4 +133,10 @@ html {
     font-size: var(--font-large-size);
     line-height: var(--font-large-line-height);
   }
+}
+
+
+html {
+  font-family: "Montserrat", sans-serif !important;
+  color: #3F3D56 !important;
 }
