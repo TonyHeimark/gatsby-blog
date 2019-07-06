@@ -1,0 +1,9 @@
+.not-found-div {
+  margin: 0 auto;
+  width: 20%;
+  display: grid;
+}
+
+.not-found {
+  place-content: center;
+}

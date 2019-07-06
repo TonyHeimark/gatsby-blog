@@ -3,7 +3,7 @@
 
 .intro {
   padding: 0;
-  background: linear-gradient(#e0e3ff, #fff);
+  background: linear-gradient(#aadcf3, #fff);
   margin-top: -95.19px;
 }
 
@@ -34,32 +34,31 @@
   margin: 0 auto;
 }
 
+@media (max-width: 950px) {
+  .text-container {
+    padding-top: 250px;
+    padding-left: 30%;
+  }
 
-    @media (max-width: 950px) {
-      .text-container {
-        padding-top: 250px;
-        padding-left: 30%;
-      }
+  .container {
+    background-size: 1000px;
+    background-position: -850px 30%;
+  }
+}
 
-      .container {
-        background-size: 1000px;
-        background-position: -850px 30%;
-      }
-    }
+@media (max-width: 550px) {
+  .intro-title {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
 
-    @media (max-width: 550px) {
-      .intro-title {
-        font-size: 3rem;
-        margin-bottom: 0;
-      }
+  .text-container {
+    padding-top: 350px;
+    padding-left: 0;
+  }
 
-      .text-container {
-        padding-top: 350px;
-        padding-left: 0;
-      }
-
-      .container {
-        background-size: 340px;
-        background-position: 100% 20%;
-      }
-    }
+  .container {
+    background-size: 340px;
+    background-position: 100% 20%;
+  }
+}
