@@ -1,11 +1,10 @@
 @import "../styles/custom-media.css";
 @import "../styles/custom-properties.css";
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 
 /*
  * Statically sized elements
  */
-
 
 .title1 {
   font-size: var(--font-title1-size);
@@ -135,8 +134,7 @@
   }
 }
 
-
 html {
-  font-family: "Montserrat", sans-serif !important;
-  color: #3F3D56 !important;
+  font-family: "Nunito", sans-serif !important;
+  color: #3f3d56 !important;
 }

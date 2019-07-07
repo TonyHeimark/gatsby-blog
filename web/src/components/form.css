@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
 .contact-wrapper {
   margin-top: 100px;
 }
@@ -21,6 +23,7 @@ form input {
   -o-transition: margin linear 0.3s;
   transition: margin linear 0.3s;
   color: #3f3d56;
+  font-family: "Nunito", sans-serif;
 }
 
 form textarea {
@@ -41,6 +44,7 @@ form textarea {
   margin-bottom: 40px;
   color: #3f3d56;
   resize: none;
+  font-family: "Nunito", sans-serif;
 }
 
 form button {
@@ -48,16 +52,18 @@ form button {
   display: block;
   margin: 0 0 10px 0;
   padding: 5px 20px;
-  background-color: transparent;
+  background-color: #3f3d56;
   border: 2px solid #3f3d56;
   font-size: 1.5em;
   width: auto;
   text-align: left;
+  font-family: "Nunito", sans-serif;
+  color: white;
 }
 
 form button:hover {
-  background-color: #3f3d56;
-  color: white;
+  background-color: transparent;
+  color: #3f3d56;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -68,6 +74,7 @@ form label {
   display: block;
   margin-top: 40px;
   color: #3f3d56;
+  font-family: "Nunito", sans-serif;
 }
 
 .form-label-name {

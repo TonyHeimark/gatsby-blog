@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
 :root {
-  --font-family: 'Montserrat', sans-serif;
+  --font-family: 'Nunito', sans-serif;
 
-  --body-bg: rgb(27, 27, 27);
-  --text-color: rgb(255, 255, 255);
+  --body-bg: rgb(255, 255, 255);
+  --text-color: #3f3d56;
 
-  --brand-primary: #4573f1;
-  --brand-secondary: #8eb5f0;
+  --brand-primary: #f09d5b;
+  --brand-secondary: #f4c8ae;
 
-  --component-bg: rgb(27, 27, 27);
-  --component-border-color: rgb(245, 245, 245);
+  --component-bg: #fff9f6;
+  --component-border-color: #000000;
   --component-box-shadow: 0 1px 3px color(var(--black) a(50%));
 
   --state-danger-color: #f8495f;
