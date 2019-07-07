@@ -44,13 +44,7 @@ export default props => {
   };
 
   return (
-    <form
-      name="contact"
-      method="post"
-      action="/pages/success.js"
-      autoComplete="off"
-      data-netlify="true"
-    >
+    <form name="contact" method="post" autoComplete="off" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" autoComplete="false" />
       <p>
         <label className="form-label-name">
