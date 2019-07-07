@@ -1,5 +1,5 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .content {
   background: url("../assets/blobs3.svg");
@@ -14,7 +14,6 @@
 }
 
 .footer {
-  
 }
 
 .footerWrapper {
@@ -38,16 +37,13 @@
   line-height: var(--font-small-line-height);
 }
 
-@media (max-width: 768px){
-
+@media (max-width: 768px) {
   .content {
     background: none;
   }
-
 }
 
-@media (max-width: 450px){
-
+@media (max-width: 450px) {
   .content {
     background: url("../assets/blobs3-mobile.svg");
     background-position: bottom;
@@ -55,5 +51,4 @@
     background-repeat: no-repeat;
     min-height: calc(100% - 73px - 120px);
   }
-
 }
