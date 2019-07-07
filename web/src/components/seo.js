@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { imageUrlFor } from "../lib/image-url";
 import { buildImageObj } from "../lib/helpers";
 import favicon16 from "./icon/favicon.ico";
+import metaImg from "../assets/undraw_code_review_l1q9.svg";
 
 function SEO({ description, lang, meta, keywords, title, image }) {
   return (
@@ -47,7 +48,7 @@ function SEO({ description, lang, meta, keywords, title, image }) {
               },
               {
                 property: "og:image",
-                content: metaImage
+                content: metaImg
               },
               {
                 name: "twitter:card",
