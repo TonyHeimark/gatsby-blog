@@ -1,0 +1,104 @@
+.contact-wrapper {
+  margin-top: 100px;
+}
+
+.contact-form-container {
+  margin-top: -100px;
+}
+
+form input {
+  height: 40px;
+  padding: 5px 0 0 0px;
+  font-size: 1.3rem;
+  min-width: 270px;
+  width: 80%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #3f3d56;
+  display: block;
+  margin-top: -40px;
+  -webkit-transition: margin linear 0.3s;
+  -o-transition: margin linear 0.3s;
+  transition: margin linear 0.3s;
+  color: #3f3d56;
+}
+
+form textarea {
+  font-size: 1.3rem;
+  height: 40px;
+  min-width: 270px;
+  width: 80%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #3f3d56;
+  padding: 5px 0 0 0;
+  margin-left: 0px;
+  display: block;
+  -webkit-transition: height linear 0.3s;
+  -o-transition: height linear 0.3s;
+  transition: height linear 0.3s;
+  margin-top: -40px;
+  margin-bottom: 40px;
+  color: #3f3d56;
+  resize: none;
+}
+
+form button {
+  border-radius: 4px;
+  display: block;
+  margin: 0 0 10px 0;
+  padding: 5px 20px;
+  background-color: transparent;
+  border: 2px solid #3f3d56;
+  font-size: 1.5em;
+  width: auto;
+  text-align: left;
+}
+
+form button:hover {
+  background-color: #3f3d56;
+  color: white;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+form label {
+  display: block;
+  margin-top: 40px;
+  color: #3f3d56;
+}
+
+.form-label-name {
+  margin-top: 173px;
+}
+
+form .Active {
+  margin-top: 0;
+  -webkit-transition: margin linear 0.3s;
+  -o-transition: margin linear 0.3s;
+  transition: margin linear 0.3s;
+}
+
+form .ActiveField {
+  margin-top: 0;
+  height: 150px;
+  -webkit-transition: height linear 0.3s;
+  -o-transition: height linear 0.3s;
+  transition: height linear 0.3s;
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    margin-top: 20px;
+  }
+
+  form input {
+    width: 100%;
+  }
+
+  form textarea {
+    width: 100%;
+  }
+}

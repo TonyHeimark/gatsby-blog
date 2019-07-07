@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./form.css";
+
 export default props => {
   const [active, setActive] = useState(false);
   const [activeTwo, setActiveTwo] = useState(false);
