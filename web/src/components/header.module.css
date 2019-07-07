@@ -146,6 +146,7 @@
 
   .nav ul {
     flex-direction: column;
+    padding: 0;
   }
 
   .nav_link {
