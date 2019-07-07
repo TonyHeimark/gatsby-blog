@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { imageUrlFor } from "../lib/image-url";
 import { buildImageObj } from "../lib/helpers";
 import favicon16 from "./icon/favicon.ico";
+import metaImg from "../assets/metaImg.png";
 
 function SEO({ description, lang, meta, keywords, title, image }) {
   return (
@@ -20,7 +21,7 @@ function SEO({ description, lang, meta, keywords, title, image }) {
             imageUrlFor(buildImageObj(image))
               .width(1200)
               .url()) ||
-          "";
+          metaImg;
 
         return (
           <Helmet
