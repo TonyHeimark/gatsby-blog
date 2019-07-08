@@ -1,6 +1,5 @@
 import React from "react";
 
-import { responsiveTitle1 } from "../components/typography.module.css";
 import introStyles from "./Intro.module.css";
 
 const Intro = () => (
