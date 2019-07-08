@@ -6,8 +6,6 @@ import Container from "../components/container";
 import SEO from "../components/seo";
 
 import { responsiveTitle1 } from "../components/typography.module.css";
-import gitHub from "../assets/github-square-brands.svg";
-import linkedIn from "../assets/linkedin-brands.svg";
 
 const ContactPage = () => (
   <Layout>
