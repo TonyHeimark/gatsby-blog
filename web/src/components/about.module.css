@@ -1,7 +1,26 @@
 .text-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 100px;
+}
+
+.imagebg {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .text-container {
+    grid-template-columns: 1fr;
+  }
+
+  .imagebg {
+    display: block;
+    height: 400px;
+    background: url("../assets/undraw_code_typing_7jnv.svg");
+    background-size: contain;
+    background-position: 100% 70%;
+    background-repeat: no-repeat;
+  }
 }
 
 /* .about-title {

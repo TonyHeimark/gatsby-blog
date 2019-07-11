@@ -43,10 +43,10 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .content {
     background: url("../assets/blobs3-mobile.svg");
-    background-position: bottom;
+    background-position: cover;
     background-size: 100%;
     background-repeat: no-repeat;
     min-height: calc(100% - 73px - 120px);

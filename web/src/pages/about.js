@@ -35,6 +35,7 @@ const AboutPage = () => (
             </p>
           </div>
         </Fade>
+        <div className={styles.imagebg} />
         <Fade right>
           <div>
             <h2>The Blog</h2>
