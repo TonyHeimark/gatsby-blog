@@ -17,5 +17,7 @@
     "@sanity/cli": "^0.141.6",
     "lerna": "^3.13.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-cookie-consent": "^2.3.2"
+  }
 }

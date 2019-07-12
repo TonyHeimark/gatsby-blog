@@ -20,6 +20,7 @@
   box-sizing: border-box;
   max-width: 960px;
   margin: 0 auto;
+  display: grid;
 
   @media (--media-min-small) {
     padding: 2em 2em 2em;
@@ -31,8 +32,31 @@
   margin: 0 0 1rem;
 }
 
+.footer-link {
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  color: black;
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
+}
+
+.cookie-button {
+  color: white;
+  font-size: 1em;
+  background: #413e58;
+  border-radius: 4px;
+  padding: 10px 20px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
 .siteInfo {
   text-align: center;
+  text-decoration: none;
+  color: black;
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
 }

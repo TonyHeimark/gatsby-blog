@@ -1,5 +1,5 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .root {
   display: blog;
@@ -23,6 +23,9 @@
 
 .leadMediaThumb {
   position: relative;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 4px;
   padding-bottom: 66.666%;
   background: var(--color-very-light-gray);
 
@@ -34,6 +37,10 @@
     height: 100%;
     object-fit: cover;
   }
+}
+
+.root:hover .leadMediaThumb {
+  opacity: 1;
 }
 
 .text {
@@ -68,4 +75,10 @@
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
   color: var(--color-gray);
+}
+
+@media (max-width: 675px) {
+  .leadMediaThumb {
+    opacity: 1;
+  }
 }
