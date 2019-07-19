@@ -10,7 +10,7 @@ const Intro = () => (
       <div className={introStyles.textContainer}>
         <Fade left>
           <h1 className={introStyles.introTitle}>Hello!</h1>
-          <p className={introStyles.introParagraph}>
+          <p className={introStyles.introP}>
             Welcome to my blog, where I share what I've learned during the past year and what I'm
             currently learning as a front-end developer student.
           </p>
