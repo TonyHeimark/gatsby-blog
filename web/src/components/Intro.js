@@ -11,8 +11,8 @@ const Intro = () => (
         <Fade left>
           <h1 className={introStyles.introTitle}>Hello!</h1>
           <p className={introStyles.introParagraph}>
-            Welcome to my blog, where I share my journey from being an Audi mechanic to a front-end
-            developer, what I've learned during the past year and what I'm currently learning.
+            Welcome to my blog, where I share what I've learned during the past year and what I'm
+            currently learning as a front-end developer student.
           </p>
           <Link className={introStyles.introButton} to="/archive">
             Check it!
