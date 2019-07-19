@@ -22,7 +22,7 @@ const AboutPage = () => (
               also work part-time as a freelance front-end developer.
             </p>
             <p>
-              One year ago I quit my full-time job as a car mechanic to start my studies. I liked
+              One year ago I quit my full-time job as an Audi mechanic to start my studies. I liked
               being a mechanic to some extent, but I always felt that it was a profession that I
               just kind of fell into. With the need for web expertise exploding in recent years I
               decided to make the leap.

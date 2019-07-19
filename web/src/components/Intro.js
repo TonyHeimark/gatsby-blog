@@ -11,11 +11,11 @@ const Intro = () => (
         <Fade left>
           <h1 className={introStyles.introTitle}>Hello!</h1>
           <p className={introStyles.introParagraph}>
-            I help businesses attract more customers and increase sales by making kick-ass websites
-            and applications!
+            Welcome to my blog, where I share my journey from being an Audi mechanic to a front-end
+            developer, what I've learned during the past year and what I'm currently learning.
           </p>
-          <Link className={introStyles.introButton} to="/contact">
-            Contact Me
+          <Link className={introStyles.introButton} to="/archive">
+            Check it!
           </Link>
         </Fade>
       </div>

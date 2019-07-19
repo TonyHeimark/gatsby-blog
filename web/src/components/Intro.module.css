@@ -10,12 +10,12 @@
 .intro-button {
   border-radius: 4px;
   display: block;
-  margin: 40px 0 0 0;
+  margin: 20px 0 0 0;
   padding: 10px 35px;
   background-color: #3f3d56d7;
   border: none;
   font-size: 1.5em;
-  width: 130px;
+  width: 100px;
   text-align: left;
   font-family: "Nunito", sans-serif;
   color: white;
@@ -87,6 +87,7 @@
   .intro-title {
     font-size: 3rem;
     margin-bottom: 0;
+    margin-top: 70px;
   }
 
   .text-container {
