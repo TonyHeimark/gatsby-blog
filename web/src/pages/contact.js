@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "../components/Form";
 import Layout from "../components/layout";
 import Container from "../components/container";
@@ -21,6 +21,7 @@ const ContactPage = () => {
     email: false,
     message: false
   });
+  const [success, setSuccess] = useState(false);
   const [errorState, setErrorState] = useState({});
   const [formFields, setFormFields] = useState({
     name: "",
@@ -31,7 +32,8 @@ const ContactPage = () => {
   const handleSubmit = e => {
     e.preventDefault();
     let errors = {};
-    const emailVal = RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$");
+    // prettier-ignore
+    const emailVal = RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,4}$");
 
     if (formFields.name === "") {
       errors = { ...errors, name: "You need to fill out this field" };
@@ -48,21 +50,35 @@ const ContactPage = () => {
       e.preventDefault();
       setErrorState(errors);
       return;
-    } else if (errorCheck.length === 0) {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...formFields })
-      })
-        .then(() => alert("Success!"))
-        .catch(error => alert(error));
-      e.preventDefault();
     }
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formFields })
+    })
+      .then(() => setSuccess(true))
+      .catch(error => alert(error));
+    e.preventDefault();
   };
 
   const handleChange = e => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value });
   };
+
+  useEffect(() => {
+    setActiveField({
+      name: false,
+      email: false,
+      message: false
+    });
+    setErrorState({});
+    setFormFields({
+      name: "",
+      email: "",
+      message: ""
+    });
+  }, [success]);
 
   return (
     <Layout>
@@ -86,7 +102,12 @@ const ContactPage = () => {
           >
             <img className="contact-icon" src={linkedIn} alt="linkedin-icon" />
           </a>
-          <div className="contact-form-container">
+          <div className="contact-form-container" style={{ position: "relative" }}>
+            {success && (
+              <span style={{ position: "absolute", top: "-40px", color: "green" }}>
+                Thank you for contacting me, I will get back to you as soon as i can!
+              </span>
+            )}
             <Form
               handleChange={handleChange}
               handleSubmit={handleSubmit}
