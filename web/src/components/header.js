@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Icon from "./icon";
 import { cn } from "../lib/helpers";
 
+import Logo from "../assets/logo.svg";
+
 import styles from "./header.module.css";
 
 const Header = props => {
@@ -29,7 +31,9 @@ const Header = props => {
     <header className={styles.header}>
       <div className={styles.header__innerBlock}>
         <div className={styles.branding}>
-          <Link to="/">Tony Heimark</Link>
+          <Link to="/">
+            <img style={{ width: "70px", height: "70px" }} src={Logo} alt="logo" />
+          </Link>
         </div>
         <div
           onClick={handleHamburger}
