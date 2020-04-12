@@ -7,7 +7,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // document schemas
 import author from './documents/author'
 import category from './documents/category'
+import technology from './documents/technology'
 import post from './documents/post'
+import project from './documents/project'
 import siteSettings from './documents/siteSettings'
 
 // Object types
@@ -28,7 +30,9 @@ export default createSchema({
     // in the studio.
     siteSettings,
     post,
+    project,
     category,
+    technology,
     author,
     mainImage,
     authorReference,

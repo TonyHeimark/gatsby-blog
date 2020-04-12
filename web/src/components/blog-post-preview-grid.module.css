@@ -1,12 +1,12 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .root {
-  margin: 2em 0 4em;
+  margin: 2rem 0 8rem;
 }
 
 .headline {
-  font-size: var(--font-micro-size);
+  font-size: 1.8rem;
   line-height: var(--font-micro-line-height);
   font-weight: 600;
   text-transform: uppercase;
@@ -32,7 +32,7 @@
 }
 
 .browseMoreNav {
-  composes: small from './typography.module.css';
+  composes: small from "./typography.module.css";
   margin-top: 1rem;
   text-align: right;
 

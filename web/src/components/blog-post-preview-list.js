@@ -5,7 +5,7 @@ import BlogPostPreview from "./blog-post-preview";
 import styles from "./blog-post-preview-list.module.css";
 import Fade from "react-reveal/Fade";
 
-function BlogPostPreviewGrid(props) {
+const BlogPostPreviewGrid = props => {
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
@@ -26,7 +26,7 @@ function BlogPostPreviewGrid(props) {
       )}
     </div>
   );
-}
+};
 
 BlogPostPreviewGrid.defaultProps = {
   title: "",

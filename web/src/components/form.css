@@ -17,10 +17,12 @@
 .contact-icon {
   width: 50px;
   margin: 0 20px 0 0;
+  opacity: 0.85;
 }
 
 .contact-icon:hover {
   transform: scale(1.05);
+  opacity: 1;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -111,6 +113,10 @@ form .Active {
   -webkit-transition: margin linear 0.3s;
   -o-transition: margin linear 0.3s;
   transition: margin linear 0.3s;
+}
+
+form .error {
+  border-bottom: 2px solid red;
 }
 
 form .ActiveField {

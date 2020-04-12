@@ -1,19 +1,22 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
-.root {}
+.root {
+}
 
 .title {
-  composes: responsiveTitle1 from './typography.module.css';
+  composes: responsiveTitle1 from "./typography.module.css";
 }
 
 .mainImage {
+  box-sizing: border-box;
   max-width: 1920px;
+  max-height: 100vh;
+  height: calc(100vh - 250px);
   margin: 0 auto;
   display: block;
   position: relative;
   background: var(--color-very-light-gray);
-  padding-bottom: calc(9 / 16 * 100%);
 
   @nest & img {
     display: block;
@@ -21,6 +24,8 @@
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 1920px;
+    max-height: 100vh;
     height: 100%;
     vertical-align: top;
     object-fit: cover;
@@ -31,7 +36,7 @@
   @media (--media-min-medium) {
     display: grid;
     grid-template-columns: 1fr;
-    grid-column-gap: 2em;
+    grid-column-gap: 3em;
     grid-template-columns: 3fr 1fr;
   }
 }
@@ -65,7 +70,7 @@
 }
 
 .publishedAt {
-  composes: small from './typography.module.css';
+  composes: small from "./typography.module.css";
   margin: 2rem 0 3rem;
   color: var(--color-gray);
 }
@@ -86,6 +91,30 @@
 }
 
 .categoriesHeadline {
-  composes: base from './typography.module.css';
+  composes: base from "./typography.module.css";
   margin: 0.5rem 0 0;
+}
+
+.intro-button {
+  border-radius: 4px;
+  display: block;
+  margin: 40px 0 0 0;
+  padding: 10px 35px;
+  background-color: #3f3d56d7;
+  border: none;
+  font-size: 1.5em;
+  width: 150px;
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+.intro-button:hover {
+  background-color: #3f3d56;
+  color: white;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
 }

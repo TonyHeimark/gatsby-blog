@@ -31,17 +31,7 @@ export const query = graphql`
   }
 `;
 
-const ArchivePage = props => {
-  const { data, errors } = props;
-
-  if (errors) {
-    return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
-    );
-  }
-
+const ArchivePage = ({ data }) => {
   const postNodes = data && data.posts && mapEdgesToNodes(data.posts);
 
   return (

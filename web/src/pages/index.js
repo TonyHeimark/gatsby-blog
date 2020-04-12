@@ -6,8 +6,8 @@ import {
   filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
 import BlogPostPreviewList from "../components/blog-post-preview-list";
+import ProjectPreviewGrid from "../components/project-preview-grid";
 import Container from "../components/container";
-import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
@@ -64,20 +64,31 @@ export const query = graphql`
         }
       }
     }
+    projects: allSanityProject {
+      edges {
+        node {
+          id
+          mainImage {
+            ...SanityImage
+            alt
+          }
+          title
+          slug {
+            current
+          }
+          tech {
+            id
+            title
+          }
+          projectUrl
+          githubUrl
+        }
+      }
+    }
   }
 `;
 
-const IndexPage = props => {
-  const { data, errors } = props;
-
-  if (errors) {
-    return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
-    );
-  }
-
+const IndexPage = ({ data }) => {
   const site = (data || {}).site;
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)
@@ -85,17 +96,16 @@ const IndexPage = props => {
         .filter(filterOutDocsPublishedInTheFuture)
     : [];
 
-  if (!site) {
-    throw new Error(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
-    );
-  }
+  const projectNodes = (data || {}).projects.edges;
 
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Intro />
       <Container>
+        {projectNodes && (
+          <ProjectPreviewGrid title="Projects" nodes={projectNodes} browseMoreHref="/projects/" />
+        )}
         {postNodes && (
           <BlogPostPreviewList
             title="Latest blog posts"

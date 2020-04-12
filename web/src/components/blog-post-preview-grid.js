@@ -4,7 +4,7 @@ import BlogPostPreview from "./blog-post-preview";
 
 import styles from "./blog-post-preview-grid.module.css";
 
-function BlogPostPreviewGrid(props) {
+const BlogPostPreviewGrid = props => {
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
@@ -23,7 +23,7 @@ function BlogPostPreviewGrid(props) {
       )}
     </div>
   );
-}
+};
 
 BlogPostPreviewGrid.defaultProps = {
   title: "",

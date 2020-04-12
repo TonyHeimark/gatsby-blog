@@ -19,7 +19,7 @@ const AboutPage = () => (
             <h2>Me</h2>
             <p>
               Hi, my name is Tony, I'm 25 years old and I study front-end development in Oslo. I
-              also work part-time as a freelance front-end developer.
+              also work part-time as a front-end developer at Deloitte Digital.
             </p>
             <p>
               One year ago I quit my full-time job as an Audi mechanic to start my studies. I liked

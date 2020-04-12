@@ -7,7 +7,20 @@ import { buildImageObj } from "../lib/helpers";
 import favicon16 from "./icon/favicon.ico";
 import metaImg from "../assets/metaImg.png";
 
-function SEO({ description, lang, meta, keywords, title, image }) {
+const detailsQuery = graphql`
+  query DefaultSEOQuery {
+    site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
+      title
+      description
+      keywords
+      author {
+        name
+      }
+    }
+  }
+`;
+
+const SEO = ({ description, lang, meta, keywords, title, image }) => {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -81,7 +94,7 @@ function SEO({ description, lang, meta, keywords, title, image }) {
       }}
     />
   );
-}
+};
 
 SEO.defaultProps = {
   lang: "en",
@@ -98,16 +111,3 @@ SEO.propTypes = {
 };
 
 export default SEO;
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
-      title
-      description
-      keywords
-      author {
-        name
-      }
-    }
-  }
-`;

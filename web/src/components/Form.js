@@ -1,60 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./form.css";
 
-export default props => {
-  const [active, setActive] = useState(false);
-  const [activeTwo, setActiveTwo] = useState(false);
-  const [activeThree, setActiveThree] = useState(false);
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
 
-  const toggleActive = () => {
-    if (active === false) {
-      setActive(true);
-    }
-  };
-
-  const removeActive = e => {
-    if (!e.target.value && active) {
-      setActive(false);
-    }
-  };
-
-  const toggleActiveTwo = () => {
-    if (activeTwo === false) {
-      setActiveTwo(true);
-    }
-  };
-
-  const removeActiveTwo = e => {
-    if (!e.target.value && activeTwo) {
-      setActiveTwo(false);
-    }
-  };
-
-  const toggleActiveThree = () => {
-    if (activeThree === false) {
-      setActiveThree(true);
-    }
-  };
-
-  const removeActiveThree = e => {
-    if (!e.target.value && activeThree) {
-      setActiveThree(false);
-    }
-  };
-
+const Form = ({
+  handleChange,
+  handleSubmit,
+  errorState,
+  formFields,
+  activeField,
+  setActiveField
+}) => {
   return (
-    <form name="contact" method="post" autoComplete="off" data-netlify="true">
+    <form name="contact" onSubmit={handleSubmit}>
       <input type="hidden" name="form-name" value="contact" autoComplete="false" />
       <p>
         <label className="form-label-name">
           Your Name:{" "}
           <input
-            onFocus={toggleActive}
-            onBlur={removeActive}
-            className={active ? "Active" : "Inactive"}
+            onChange={handleChange}
+            onFocus={e => {
+              setActiveField({ ...activeField, [e.target.name]: true });
+            }}
+            onBlur={e => {
+              setActiveField({ ...activeField, [e.target.name]: false });
+            }}
+            className={`${
+              activeField.name || formFields.name ? "Active" : "Inactive"
+            } ${errorState.name && "error"}`}
             type="text"
             name="name"
+            value={formFields.name}
+            autoComplete="off"
           />
         </label>
       </p>
@@ -62,11 +44,20 @@ export default props => {
         <label className="form-label">
           Your Email:{" "}
           <input
-            onFocus={toggleActiveTwo}
-            onBlur={removeActiveTwo}
-            className={activeTwo ? "Active" : "Inactive"}
+            onChange={handleChange}
+            onFocus={e => {
+              setActiveField({ ...activeField, [e.target.name]: true });
+            }}
+            onBlur={e => {
+              setActiveField({ ...activeField, [e.target.name]: false });
+            }}
+            className={`${
+              activeField.email || formFields.email ? "Active" : "Inactive"
+            } ${errorState.email && "error"}`}
             type="email"
             name="email"
+            value={formFields.email}
+            autoComplete="off"
           />
         </label>
       </p>
@@ -74,10 +65,19 @@ export default props => {
         <label className="form-label-message">
           Message:{" "}
           <textarea
-            onFocus={toggleActiveThree}
-            onBlur={removeActiveThree}
-            className={activeThree ? "ActiveField" : "Inactive"}
+            onChange={handleChange}
+            onFocus={e => {
+              setActiveField({ ...activeField, [e.target.name]: true });
+            }}
+            onBlur={e => {
+              setActiveField({ ...activeField, [e.target.name]: false });
+            }}
+            className={`${
+              activeField.message || formFields.message ? "ActiveField" : "Inactive"
+            } ${errorState.message && "error"}`}
             name="message"
+            value={formFields.message}
+            autoComplete="off"
           />
         </label>
       </p>
@@ -87,3 +87,5 @@ export default props => {
     </form>
   );
 };
+
+export default Form;
