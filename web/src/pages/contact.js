@@ -45,17 +45,19 @@ const ContactPage = () => {
 
     const errorCheck = Object.keys(errors);
     if (errorCheck.length !== 0) {
+      e.preventDefault();
       setErrorState(errors);
-      return errors;
+      return;
+    } else if (errorCheck.length === 0) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formFields })
+      })
+        .then(() => alert("Success!"))
+        .catch(error => alert(error));
+      e.preventDefault();
     }
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formFields })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
   };
 
   const handleChange = e => {
