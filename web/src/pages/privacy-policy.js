@@ -4,6 +4,8 @@ import Layout from "../components/layout";
 import Container from "../components/container";
 import SEO from "../components/seo";
 
+import "../styles/index.scss";
+
 const PrivacyPolicyPage = () => (
   <Layout>
     <SEO title="Privacy Policy" />

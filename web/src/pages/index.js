@@ -10,8 +10,9 @@ import ProjectPreviewGrid from "../components/project-preview-grid";
 import Container from "../components/container";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-
 import Intro from "../components/Intro";
+
+import "../styles/index.scss";
 //import ProjectsShowcase from "../components/projects-showcase";
 
 export const query = graphql`

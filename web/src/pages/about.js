@@ -4,6 +4,8 @@ import Container from "../components/container";
 import SEO from "../components/seo";
 import Fade from "react-reveal/Fade";
 
+import "../styles/index.scss";
+
 const AboutPage = () => (
   <Layout>
     <SEO title="About" />

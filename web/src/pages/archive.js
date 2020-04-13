@@ -6,6 +6,8 @@ import Container from "../components/container";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
+import "../styles/index.scss";
+
 export const query = graphql`
   query ArchivePageQuery {
     posts: allSanityPost(limit: 12, sort: { fields: [publishedAt], order: DESC }) {

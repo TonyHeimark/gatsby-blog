@@ -7,6 +7,8 @@ import SEO from "../components/seo";
 import githubIcon from "../assets/github-square-brands.svg";
 import linkedIn from "../assets/linkedin-brands.svg";
 
+import "../styles/index.scss";
+
 const encode = data => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
