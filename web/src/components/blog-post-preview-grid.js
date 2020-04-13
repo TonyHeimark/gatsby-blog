@@ -2,13 +2,11 @@ import { Link } from "gatsby";
 import React from "react";
 import BlogPostPreview from "./blog-post-preview";
 
-import styles from "./blog-post-preview-grid.module.css";
-
 const BlogPostPreviewGrid = props => {
   return (
-    <div className={styles.root}>
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
-      <ul className={styles.grid}>
+    <div className="preview-grid">
+      {props.title && <h2 className="preview-grid__headline">{props.title}</h2>}
+      <ul className="preview-grid__grid">
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
@@ -17,8 +15,8 @@ const BlogPostPreviewGrid = props => {
           ))}
       </ul>
       {props.browseMoreHref && (
-        <div className={styles.browseMoreNav}>
-          <Link to={props.browseMoreHref}>Browse more</Link>
+        <div className="preview-grid__browse-more-nav">
+          <Link to={props.browseMoreHref}>Les mer</Link>
         </div>
       )}
     </div>

@@ -1,0 +1,28 @@
+.about-wrapper {
+  &__title {
+    @include responsiveTitle1;
+  }
+
+  &__text-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img-bg {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+      height: 400px;
+      background: url("../assets/undraw_code_typing_7jnv.svg");
+      background-size: contain;
+      background-position: 100% 70%;
+      background-repeat: no-repeat;
+    }
+  }
+}

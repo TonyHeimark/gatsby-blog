@@ -2,14 +2,13 @@ import { Link } from "gatsby";
 import React from "react";
 import BlogPostPreview from "./blog-post-preview";
 
-import styles from "./blog-post-preview-list.module.css";
 import Fade from "react-reveal/Fade";
 
 const BlogPostPreviewGrid = props => {
   return (
-    <div className={styles.root}>
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
-      <ul className={styles.grid}>
+    <div className="preview-list">
+      {props.title && <h2 className="preview-list__headline">{props.title}</h2>}
+      <ul className="preview-list__grid">
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
@@ -19,8 +18,8 @@ const BlogPostPreviewGrid = props => {
             </li>
           ))}
       </ul>
-      {props.browseMoreHref && (
-        <div className={styles.browseMoreNav}>
+      {props.browseMoreHref && props.nodes && props.nodes.length > 3 && (
+        <div className="preview-list__browse-more-nav">
           <Link to={props.browseMoreHref}>Browse more</Link>
         </div>
       )}

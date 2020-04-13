@@ -1,13 +1,5 @@
 import React from "react";
 
-import "./form.css";
-
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
-
 const Form = ({
   handleChange,
   handleSubmit,
@@ -17,10 +9,10 @@ const Form = ({
   setActiveField
 }) => {
   return (
-    <form name="contact" onSubmit={handleSubmit}>
+    <form className="form" name="contact" onSubmit={handleSubmit}>
       <input type="hidden" name="form-name" value="contact" autoComplete="false" />
       <p>
-        <label className="form-label-name">
+        <label className="form__label form__label--space">
           Your Name:{" "}
           <input
             onChange={handleChange}
@@ -30,9 +22,9 @@ const Form = ({
             onBlur={e => {
               setActiveField({ ...activeField, [e.target.name]: false });
             }}
-            className={`${
-              activeField.name || formFields.name ? "Active" : "Inactive"
-            } ${errorState.name && "error"}`}
+            className={`form__input ${
+              activeField.name || formFields.name ? "form__input--active" : "form__input--inactive"
+            } ${errorState.name && "form__input--error"}`}
             type="text"
             name="name"
             value={formFields.name}
@@ -41,7 +33,7 @@ const Form = ({
         </label>
       </p>
       <p>
-        <label className="form-label">
+        <label className="form__label">
           Your Email:{" "}
           <input
             onChange={handleChange}
@@ -51,9 +43,11 @@ const Form = ({
             onBlur={e => {
               setActiveField({ ...activeField, [e.target.name]: false });
             }}
-            className={`${
-              activeField.email || formFields.email ? "Active" : "Inactive"
-            } ${errorState.email && "error"}`}
+            className={`form__input ${
+              activeField.email || formFields.email
+                ? "form__input--active"
+                : "form__input--inactive"
+            } ${errorState.email && "form__input--error"}`}
             type="email"
             name="email"
             value={formFields.email}
@@ -62,7 +56,7 @@ const Form = ({
         </label>
       </p>
       <p>
-        <label className="form-label-message">
+        <label className="form__label">
           Message:{" "}
           <textarea
             onChange={handleChange}
@@ -72,9 +66,11 @@ const Form = ({
             onBlur={e => {
               setActiveField({ ...activeField, [e.target.name]: false });
             }}
-            className={`${
-              activeField.message || formFields.message ? "ActiveField" : "Inactive"
-            } ${errorState.message && "error"}`}
+            className={`form__textarea ${
+              activeField.message || formFields.message
+                ? "form__textarea--active"
+                : "form__textarea--inactive"
+            } ${errorState.message && "form__textarea--error"}`}
             name="message"
             value={formFields.message}
             autoComplete="off"
@@ -82,7 +78,9 @@ const Form = ({
         </label>
       </p>
       <p>
-        <button type="submit">Send</button>
+        <button className="form__button" type="submit">
+          Send
+        </button>
       </p>
     </form>
   );

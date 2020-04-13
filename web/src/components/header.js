@@ -1,25 +1,21 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
-import Icon from "./icon";
-import { cn } from "../lib/helpers";
 
 import Logo from "../assets/logo.svg";
 
-import styles from "./header.module.css";
-
 const Header = props => {
-  const [navStyle, setNavStyle] = useState(`${styles.nav} ${styles.navHide}`);
+  const [navStyle, setNavStyle] = useState(`header__nav header__nav--hide`);
 
   const handleHamburger = () => {
-    if (navStyle === `${styles.nav} ${styles.navShow}`) {
+    if (navStyle === `header__nav header__nav--show`) {
       setTimeout(() => {
-        setNavStyle(`${styles.nav} ${styles.navFade}`);
+        setNavStyle(`header__nav header__nav--fade`);
       }, 50);
       setTimeout(() => {
-        setNavStyle(`${styles.nav} ${styles.navHide}`);
+        setNavStyle(`header__nav header__nav--hide`);
       }, 400);
     } else {
-      setNavStyle(`${styles.nav} ${styles.navShow}`);
+      setNavStyle(`header__nav header__nav--show`);
     }
   };
 
@@ -28,50 +24,54 @@ const Header = props => {
   }
 
   return (
-    <header className={styles.header}>
-      <div className={styles.header__innerBlock}>
-        <div className={styles.branding}>
+    <header className="header">
+      <div className="header__wrapper">
+        <div className="header__branding">
           <Link to="/">
-            <img style={{ width: "70px", height: "70px" }} src={Logo} alt="logo" />
+            <img src={Logo} alt="logo" />
           </Link>
         </div>
         <div
           onClick={handleHamburger}
           className={
-            navStyle === `${styles.nav} ${styles.navShow}`
-              ? `${styles.change} ${styles.hamburger}`
-              : `${styles.hamburger}`
+            navStyle === `header__nav header__nav--show`
+              ? `header__hamburger header__hamburger--active`
+              : `header__hamburger`
           }
         >
-          <div className={styles.bar1} />
-          <div className={styles.bar2} />
-          <div className={styles.bar3} />
+          <div className="header__bar header__bar--1" />
+          <div className="header__bar header__bar--2" />
+          <div className="header__bar header__bar--3" />
         </div>
         <nav className={navStyle} onClick={window.innerWidth < 768 ? handleHamburger : null}>
           <ul>
             <li>
-              <Link className={styles.nav_link} activeClassName={styles.navItemActive} to="/">
+              <Link className="header__nav-link" activeClassName="header__nav-link--active" to="/">
                 Home
               </Link>
             </li>
             <li>
               <Link
-                className={styles.nav_link}
-                activeClassName={styles.navItemActive}
+                className="header__nav-link"
+                activeClassName="header__nav-link--active"
                 to="/archive/"
               >
                 Blog
               </Link>
             </li>
             <li>
-              <Link className={styles.nav_link} activeClassName={styles.navItemActive} to="/about/">
+              <Link
+                className="header__nav-link"
+                activeClassName="header__nav-link--active"
+                to="/about/"
+              >
                 About
               </Link>
             </li>
             <li>
               <Link
-                className={styles.nav_link}
-                activeClassName={styles.navItemActive}
+                className="header__nav-link"
+                activeClassName="header__nav-link--active"
                 to="/contact/"
               >
                 Contact

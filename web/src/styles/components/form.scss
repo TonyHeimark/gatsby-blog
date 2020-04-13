@@ -1,0 +1,96 @@
+.form {
+  &__input {
+    height: 40px;
+    padding: 5px 0 0 0px;
+    font-size: 1.3rem;
+    min-width: 270px;
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #3f3d56;
+    display: block;
+    margin-top: -40px;
+    -webkit-transition: margin linear 0.3s;
+    -o-transition: margin linear 0.3s;
+    transition: margin linear 0.3s;
+    color: #3f3d56;
+    font-family: "Nunito", sans-serif;
+
+    &--active {
+      margin-top: -10px;
+      -webkit-transition: margin linear 0.3s;
+      -o-transition: margin linear 0.3s;
+      transition: margin linear 0.3s;
+    }
+
+    &--error {
+      border-bottom: 2px solid rgb(255, 86, 86);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__textarea {
+    font-size: 1.3rem;
+    height: 40px;
+    min-width: 270px;
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #3f3d56;
+    padding: 5px 0 0 0;
+    margin-left: 0px;
+    display: block;
+    -webkit-transition: height linear 0.3s;
+    -o-transition: height linear 0.3s;
+    transition: height linear 0.3s;
+    margin-top: -40px;
+    margin-bottom: 40px;
+    color: #3f3d56;
+    resize: none;
+    font-family: "Nunito", sans-serif;
+
+    &--active {
+      margin-top: 0;
+      height: 150px;
+      -webkit-transition: height linear 0.3s;
+      -o-transition: height linear 0.3s;
+      transition: height linear 0.3s;
+      border-right: 2px solid #3f3d56;
+    }
+
+    &--error {
+      border-bottom: 2px solid rgb(255, 86, 86);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-top: 40px;
+    color: #3f3d56;
+    font-family: "Nunito", sans-serif;
+
+    &--space {
+      margin-top: 173px;
+    }
+  }
+
+  &__button {
+    @include mainButton;
+    margin: 0 0 10px 0;
+  }
+}

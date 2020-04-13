@@ -3,13 +3,10 @@ import React from "react";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 
-import styles from "./blog-post-preview.module.css";
-import { responsiveTitle3 } from "./typography.module.css";
-
 const ProjectPreview = ({ mainImage, slug, title, isInList }) => {
   return (
-    <Link className={isInList ? styles.inList : styles.inGrid} to={slug.current}>
-      <div className={styles.leadMediaThumb}>
+    <Link className={isInList ? "preview__in-list" : "preview__in-grid"} to={slug.current}>
+      <div className="preview__lead-media-thumb">
         {mainImage && mainImage.asset && (
           <img
             src={imageUrlFor(buildImageObj(mainImage))
@@ -21,8 +18,8 @@ const ProjectPreview = ({ mainImage, slug, title, isInList }) => {
           />
         )}
       </div>
-      <div className={styles.text}>
-        <h3 className={cn(responsiveTitle3, styles.title)}>{title}</h3>
+      <div className="preview__text">
+        <h3 className="preview__title">{title}</h3>
       </div>
     </Link>
   );

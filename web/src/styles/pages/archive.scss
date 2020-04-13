@@ -1,0 +1,5 @@
+.archive-wrapper {
+  &__title {
+    @include responsiveTitle1;
+  }
+}

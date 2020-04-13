@@ -2,19 +2,17 @@ import React from "react";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 
-import styles from "./author-list.module.css";
-
 const AuthorList = ({ items, title }) => {
   return (
-    <div className={styles.root}>
-      <h2 className={styles.headline}>{title}</h2>
-      <ul className={styles.list}>
+    <div className="author">
+      <h2 className="author__headline">{title}</h2>
+      <ul className="author__list">
         {items.map(({ author, _key }) => {
           const authorName = author && author.name;
           return (
-            <li key={_key} className={styles.listItem}>
+            <li key={_key} className="author__list-item">
               <div>
-                <div className={styles.avatar}>
+                <div className="author__avatar">
                   {author && author.image && author.image.asset && (
                     <img
                       src={imageUrlFor(buildImageObj(author.image))

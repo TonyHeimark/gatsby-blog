@@ -1,0 +1,72 @@
+.intro {
+  padding: 0;
+  background: linear-gradient(#f3c5aa, #fff);
+  margin-top: -115.19px;
+
+  &__container {
+    background: url("../assets/undraw_Mobile_application_mr4r.svg");
+    background-size: 600px;
+    background-position: 100% 70%;
+    background-repeat: no-repeat;
+    height: 700px;
+    box-sizing: border-box;
+    max-width: 1300px;
+    padding: 2em;
+    margin: 0 auto;
+    @media (max-width: 1250px) {
+      background-size: 500px;
+    }
+    @media (max-width: 950px) {
+      background: none;
+      background-position: -850px 30%;
+      height: 600px;
+    }
+    @media (max-width: 550px) {
+      background: url("../assets/undraw_Mobile_application_mr4r.svg");
+      background-size: 350px;
+      background-position: 100% 25%;
+      background-repeat: no-repeat;
+      height: 800px;
+    }
+  }
+
+  &__text-container {
+    padding-top: 250px;
+    padding-left: 100px;
+    @media (max-width: 1250px) {
+      padding-left: 5%;
+    }
+    @media (max-width: 950px) {
+      padding-top: 150px;
+      padding-left: 20%;
+    }
+    @media (max-width: 550px) {
+      padding-top: 350px;
+      padding-left: 0;
+    }
+  }
+
+  &__title {
+    font-size: 4rem;
+    margin-bottom: 0;
+    @media (max-width: 550px) {
+      font-size: 3rem;
+      margin-bottom: 0;
+      margin-top: 70px;
+    }
+  }
+
+  &__paragraph {
+    max-width: 500px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  &__button {
+    @include mainButton;
+    margin: 40px 0 0 0;
+
+    width: 100px;
+  }
+}

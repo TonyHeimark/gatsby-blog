@@ -1,0 +1,101 @@
+.article {
+  &__title {
+    @include responsiveTitle1;
+  }
+
+  &__main-image {
+    box-sizing: border-box;
+    max-width: 1920px;
+    max-height: 100vh;
+    height: calc(100vh - 250px);
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    background: var(--color-very-light-gray);
+
+    img {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 1920px;
+      max-height: 100vh;
+      height: 100%;
+      vertical-align: top;
+      object-fit: cover;
+    }
+  }
+
+  &__grid {
+    @include media-min-medium {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-column-gap: 3em;
+      grid-template-columns: 3fr 1fr;
+    }
+  }
+
+  &__main-content {
+    @include paragraph;
+    a {
+      color: $color-accent;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+  }
+
+  figure {
+    margin: 0;
+    padding: 0;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__meta-content {
+  }
+
+  &__published-at {
+    @include small;
+    margin: 2rem 0 3rem;
+    color: $color-gray;
+  }
+
+  &__categories {
+    border-top: 1px solid $color-very-light-gray;
+    margin: 2rem 0 3rem;
+
+    ul {
+      list-style: none;
+      margin: 0.75rem 0;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 0.25rem 0;
+    }
+  }
+
+  &__categories-headline {
+    @include base;
+    margin: 0.5rem 0 0;
+  }
+
+  &__button {
+    @include mainButton;
+    margin: 40px 0 0 0;
+    width: 150px;
+  }
+}

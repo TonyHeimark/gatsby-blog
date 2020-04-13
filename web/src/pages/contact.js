@@ -7,8 +7,6 @@ import SEO from "../components/seo";
 import githubIcon from "../assets/github-square-brands.svg";
 import linkedIn from "../assets/linkedin-brands.svg";
 
-import { responsiveTitle1 } from "../components/typography.module.css";
-
 const encode = data => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -85,26 +83,26 @@ const ContactPage = () => {
       <SEO title="Contact" />
       <Container>
         <div className="contact-wrapper">
-          <h1 className={responsiveTitle1}>Contact</h1>
+          <h1 className="contact-wrapper__title">Contact</h1>
           <a
-            className="icon-link"
+            className="contant-wrapper__link"
             href="https://github.com/TonyHeimark"
             target="_blank"
             rel="noreferrer noopener"
           >
-            <img className="contact-icon" src={githubIcon} alt="github social link" />
+            <img className="contact-wrapper__icon" src={githubIcon} alt="github social link" />
           </a>
           <a
-            className="icon-link"
+            className="contant-wrapper__link"
             href="https://www.linkedin.com/in/tony-j-heimark/"
             target="_blank"
             rel="noreferrer noopener"
           >
-            <img className="contact-icon" src={linkedIn} alt="linkedin-icon" />
+            <img className="contact-wrapper__icon" src={linkedIn} alt="linkedin-icon" />
           </a>
-          <div className="contact-form-container" style={{ position: "relative" }}>
+          <div className="contact-wrapper__form-container">
             {success && (
-              <span style={{ position: "absolute", top: "-40px", color: "green" }}>
+              <span className="contact-wrapper__success">
                 Thank you for contacting me, I will get back to you as soon as i can!
               </span>
             )}

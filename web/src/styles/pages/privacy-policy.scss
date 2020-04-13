@@ -1,0 +1,5 @@
+.privacy-wrapper {
+  &__title {
+    @include responsiveTitle1;
+  }
+}

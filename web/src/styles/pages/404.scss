@@ -1,0 +1,9 @@
+.page-404 {
+  margin: 0 auto;
+  width: 20%;
+  display: grid;
+
+  &__not-found {
+    place-content: center;
+  }
+}

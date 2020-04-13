@@ -2,13 +2,11 @@ import React from "react";
 import ProjectPreview from "./project-preview";
 import Fade from "react-reveal/Fade";
 
-import styles from "./blog-post-preview-grid.module.css";
-
 const ProjectPreviewGrid = props => {
   return (
-    <div className={styles.root}>
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
-      <ul className={styles.grid}>
+    <div className="preview-grid">
+      {props.title && <h2 className="preview-grid__headline">{props.title}</h2>}
+      <ul className="preview-grid__grid">
         {props.nodes &&
           props.nodes.map(node => (
             <Fade key={node.node.id} up>
