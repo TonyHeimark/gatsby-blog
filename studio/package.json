@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "portfolio-studio",
+  "name": "gatsby-blog-studio",
   "version": "1.0.0",
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",
